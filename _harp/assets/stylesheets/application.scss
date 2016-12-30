@@ -1,49 +1,112 @@
+/* SCSS */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/* SCSS Variables */
+
+$font-std: 'Roboto', sans-serif;
+$font-clr: #e0e0e0;
+
+$title-clr: #e77b17;
+
+$box-backgr: #303030;
+$body-backgr: #ada8ff;
+
+/* Styles by element */
+
 body {
-      padding: 25px;
-      font-family: helvetica, sans-serif;
-}
-
-.pure-g {
-      border: 5px solid orange;
-      margin-bottom: 25px;
-}
-
-.pure-u-1 {
-      box-sizing: border-box;
-      border: 5px solid cadetblue;
-      padding: 25px;
-      text-align: center;
+  background-color: $body-backgr;
 }
 
 h1 {
-      font-size: 1.2em;
-      font-weight: 900;
+  font: 700 2.5em $font-std;
 }
 
 h2 {
-      font-size: 1.1em;
-      font-weight: 900;
-      margin-bottom: 25px;
+  font: 1.5em $font-std;
 }
 
-p {
-      margin-bottom: 25px;
-      text-align: left;
-      line-height: 1.6em;
+h1, h2 {
+  text-align: center;
 }
 
-ul {
-      list-style-type: none;
-      padding: 0;
+h3 {
+  font: 700 1.5em $font-std;
+  color: $title-clr;
+  line-height: 2em;
 }
 
-@media (max-width: 48em) {
-      li a {
-            color: red;
-      }
+img {
+  min-height: 300px;
+}
 
-      li {
-            display: inline;
-            margin-right: 10px;
-      }
+/* Styles by class */
+
+.headerdiv {
+  padding: 1em 0 4em 5em;
+}
+
+.footerdiv {
+  padding: 3em;
+  border: 3px solid $body-backgr;
+  background-color: $box-backgr;
+  color: $font-clr;
+}
+
+.image-box, .text-box {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 3px solid $body-backgr;
+  height: 300px;
+}
+
+.text-box {
+  padding: 5em;
+  background: $box-backgr;
+  color: $font-clr;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.bar-image-deco {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1.5em 0.5em;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,27,30,0)), color-stop(90%,rgba(12,2,2,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* W3C */
+}
+
+.link-video {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em 1.5em 1em 0;
+  width: 40%;
+  text-align: right;
+  font: 700 1.2em $font-std;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: $font-clr;
+  border-top: 2px solid white;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 48em) {
+  h1, h2 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  img {
+    min-height: 400px;
+  }
+  .image-box, .text-box {
+    height: 400px;
+  }
 }
